@@ -1,0 +1,22 @@
+body {
+    background-color: #ede3e3;
+    font-family: sans-serif;
+}
+table {
+    border: 2px solid black;
+    border-radius: 8px;
+}
+th {
+    font-size: 150%;
+    text-align: left;
+    background-color: #b33c00;
+    padding: 15px;
+}
+td {
+    text-align: left;
+    background-color: azure;
+    padding: 4px;
+}
+img{
+
+}

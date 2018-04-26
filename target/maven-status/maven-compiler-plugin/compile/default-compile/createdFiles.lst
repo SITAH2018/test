@@ -1,0 +1,7 @@
+com/sitah/guestbook/domain/GuestBookEntry.class
+com/sitah/guestbook/controller/GuestBookWebController$GuestBookRestController.class
+com/sitah/guestbook/domain/GuestBookEntryRepository.class
+com/sitah/guestbook/controller/GuestBookController.class
+com/sitah/guestbook/GuestbookApplication.class
+com/sitah/guestbook/service/GuestBookService.class
+com/sitah/guestbook/controller/GuestBookWebController.class

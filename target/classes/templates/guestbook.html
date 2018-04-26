@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>sitah Guestbook</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
+</head>
+<body>
+<img th:src="@{/css/images/uni.png}" />
+<h1> Student Course </h1>
+
+
+<div th:if="${entries.isEmpty()}">
+    <p>There are no comments in the Guestbook. What a pity.</p>
+</div>
+
+<div th:if="${!entries.isEmpty()}">
+    <table>
+        <tr>
+            <th>Student Name</th>
+            <th>Course</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+        <tr th:each="entry: ${entries}">
+            <td th:text="${entry.user}"></td>
+            <td th:text="${entry.comment}"></td>
+            <td><a th:href="@{'/delete/' + ${entry.id}}">Delete</a></td>
+            <td><a th:href="@{'/update/' + ${entry.id}}">Update</a></td>
+        </tr>
+    </table>
+</div>
+
+<h2 th:text="${formHeader}"></h2>
+<form th:object="${newEntry}" method="post">
+    <label>Student Name: </label>
+    <input type="text" size="45" th:field="*{user}" />
+    <br />
+    <label>Course: </label>
+    <input type="text" size="50" th:field="*{comment}" />
+    <input type="submit" value="Submit" />
+    <p class="warning" th:if="${#fields.hasErrors('user')}">Student Name cannot be empty.</p>
+    <p class="warning" th:if="${#fields.hasErrors('comment')}">Course cannot be empty.</p>
+    <input type="reset" value="Reset" />
+</form>
+
+
+
+</body>
+</html>
